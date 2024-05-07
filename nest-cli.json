@@ -1,0 +1,34 @@
+{
+  "$schema": "https://json.schemastore.org/nest-cli",
+  "collection": "@nestjs/schematics",
+  "sourceRoot": "apps/ticket-sales/src",
+  "compilerOptions": {
+    "deleteOutDir": true,
+    "builder": "swc",
+    "typeCheck": true,
+    "webpack": true,
+    "tsConfigPath": "apps/ticket-sales/tsconfig.app.json"
+  },
+  "monorepo": true,
+  "root": "apps/ticket-sales",
+  "projects": {
+    "ticket-sales": {
+      "type": "application",
+      "root": "apps/ticket-sales",
+      "entryFile": "main",
+      "sourceRoot": "apps/ticket-sales/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/ticket-sales/tsconfig.app.json"
+      }
+    },
+    "emails": {
+      "type": "application",
+      "root": "apps/emails",
+      "entryFile": "main",
+      "sourceRoot": "apps/emails/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/emails/tsconfig.app.json"
+      }
+    }
+  }
+}
